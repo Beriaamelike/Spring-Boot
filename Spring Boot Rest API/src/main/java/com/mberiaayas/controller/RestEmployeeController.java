@@ -1,6 +1,7 @@
 package com.mberiaayas.controller;
 
 import com.mberiaayas.model.Employee;
+import com.mberiaayas.model.UpdateEmployeeRequest;
 import com.mberiaayas.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -40,6 +41,12 @@ public class RestEmployeeController {
     public boolean deleteEmployee(@PathVariable(name = "id") String id) {
         return employeeService.deleteEmployee(id);
     }
+
+    @PutMapping(path = "/update-employee/{id}")
+    public Employee updateEmployee(@PathVariable(name = "id") String id , @RequestBody UpdateEmployeeRequest request) {
+        return employeeService.updateEmployee(id, request);
+    }
+
 
 
 
