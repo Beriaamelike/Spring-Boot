@@ -1,18 +1,21 @@
 package com.mberiaayas.controller;
 
+import com.mberiaayas.dto.DTOStudent;
+import com.mberiaayas.dto.DTOStudentUI;
 import com.mberiaayas.entity.Student;
 
 import java.util.List;
 
 public interface IStudentController {
 
-    public Student saveStudent(Student student);
+    public DTOStudent saveStudent(DTOStudentUI dtoStudentUI);
 
-    public List<Student> getAllStudents();
+    public List<DTOStudent> getAllStudents();
 
-    public Student getStudentById(Integer id);
+    public DTOStudent getStudentById(Integer id);
 
     public void deleteStudent(Integer id);
 
-    public Student updateStudent(Integer id,Student updateStudent);
+    public DTOStudent updateStudent(Integer id , DTOStudentUI dtoStudentIU);
+
 }
