@@ -38,7 +38,7 @@ public class StudentServiceImpl implements IStudentService {
         //burada globalproperty ihtiyacınız oldu.
         List<DTOStudent> dtoList = new ArrayList<>();
 
-        List<Student> studentList = studentRepository.findAll();
+        List<Student> studentList = studentRepository.findAllStudents();
         for (Student student : studentList) {
             DTOStudent dto = new DTOStudent();
             BeanUtils.copyProperties(student, dto);
@@ -52,7 +52,7 @@ public class StudentServiceImpl implements IStudentService {
     @Override
     public DTOStudent getStudentById(Integer id) {
         DTOStudent dtoStudent = new DTOStudent();
-        Optional<Student> optional =  studentRepository.findById(id);
+        Optional<Student> optional =  studentRepository.findStudentById(id);
 
         if(optional.isPresent()){
             Student student = optional.get();
