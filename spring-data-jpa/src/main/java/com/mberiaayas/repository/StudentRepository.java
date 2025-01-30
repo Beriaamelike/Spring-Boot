@@ -1,4 +1,10 @@
 package com.mberiaayas.repository;
 
-public class StudentRepository {
+import com.mberiaayas.entity.Student;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface StudentRepository extends JpaRepository<Student, Integer> {
+
 }
